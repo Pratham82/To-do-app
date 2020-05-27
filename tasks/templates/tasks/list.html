@@ -1,0 +1,183 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgb(73, 147, 243);
+}
+.container{
+    font-family: 'Noto Sans JP', sans-serif;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color:beige;
+    width:700px;
+    padding:45px 0;
+    position:absolute;
+    text-align:center;
+    border-radius:15px;
+    box-shadow: 9px 13px 21px 0px rgba(0,0,0,0.75);
+    margin-top: 50px;
+
+}
+
+.container h3{
+    font-size: 45px;
+   
+    margin-bottom: 10px;
+}
+.box-1 input[type="text"]{
+  background:none;
+  display:block;
+  margin-bottom: 10px;
+  text-align:center;
+  border:2px solid #0c0c0c;
+  padding:10px;
+  
+  width:200px;
+  outline:none;
+  color:black;
+  font-size: 20px;
+  /* border-radius: 35px; */
+  transition: 0.25s;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+    
+}
+
+.box-1 input:focus{
+    outline: none;
+}
+
+.box-1 input[type="text"]:hover{
+    width:255px;
+}
+
+.box-1 input[type="text"]:focus{
+  width:255px;
+  border-color:black;
+  
+}
+
+.box-1 input[type="submit"]{
+  border:0;
+  font-size: 22px;
+  height: 50px;
+  width:200px;
+  background:none;
+  display:block;
+  margin: 5px auto;
+  text-align:center;
+  border:2px solid ;
+  outline:none;
+  color:rgb(255, 251, 251);
+  border-radius: 35px;
+  transition: 0.35s ease-in;
+  /* border-color:#56baf5; */
+  background:#0e6de9;
+  cursor:pointer;
+}
+
+.box-1 input[type="submit"]:hover{
+  background:#091dd3;
+  /* border-color:#ebe705; */
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.inner-list .update-btn{
+  border:0;
+  font-size: 18px;
+  height: 50px;
+  width:110px;
+  background:none;
+  text-decoration: none;
+  margin: 5px;
+  text-align:center;
+  padding: 5px;
+  outline:none;
+  color:rgb(255, 251, 251);
+  border-radius: 35px;
+  transition: 0.35s ease-in;
+  /* border-color:#56baf5; */
+  background:#07990e;
+  
+
+  
+}
+
+.inner-list .delete-btn{
+  border:0;
+  font-size: 18px;
+  height: 46px;
+  width:110px;
+  background:none;
+  text-decoration: none;
+  margin: 5px ;
+  text-align:center;
+  padding: 5px;
+  outline:none;
+  color:rgb(255, 251, 251);
+  border-radius: 35px;
+  transition: 0.35s ease-in;
+  /* border-color:#56baf5; */
+  background:#e92503;
+  cursor:pointer;
+  margin: 5px;
+}
+
+
+.todo-list .inner-list{
+   text-align: justify;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.todo-list .inner-list .content{
+    margin: 15px 10px;
+    
+}
+</style>
+<body>
+    <div class="container">
+        <div class="box-1">
+            <h3>To-do List</h3>
+            <form method="POST" action="/">
+                {% csrf_token %}
+                {{form.title}}
+                
+                <input type="submit" placeholder="Create new task" class="button-1">
+            </form>
+        </div>
+        
+        <div class="todo-list">
+            {% for task in tasks %}
+            <div class="inner-list">
+                <a class="update-btn" href="{% url 'update_task' task.id %}" >Update </a>
+                <a  class="delete-btn" href="{% url 'delete' task.id %}" >Delete</a>
+                {% if task.complete == True %}
+                <strike class="content">{{task}}</strike>
+                {% else %}
+                <span class="content">{{task}}</span>
+                {% endif %}
+                
+        {% endfor %}
+        </div>
+    </div>
+    
+    
+</body>
+
+
