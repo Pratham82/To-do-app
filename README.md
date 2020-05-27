@@ -9,7 +9,7 @@ Designed with plane HTML CSS.
  - Delete tasks
  
 ## Screenshots:
-![](https://i.postimg.cc/bNJ33bNR/To-do-app-ss.png)
+![](https://i.postimg.cc/FFj78n1r/Screenshot-from-2020-05-28-03-18-44.png)
  
  ## Usage:
 #### For running the website
