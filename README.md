@@ -8,6 +8,9 @@ Designed with plane HTML CSS.
  - Mark task as completed
  - Delete tasks
  
+## Screenshots:
+![](https://i.postimg.cc/bNJ33bNR/To-do-app-ss.png)
+ 
  ## Usage:
 #### For running the website
 - `python3 manage.py runserver`
