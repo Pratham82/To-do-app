@@ -1,7 +1,79 @@
-<p>Are you sure ? "{{item}}" will be deleted</p>
-<a href="{% url 'list' %}">Cancel</a>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" name="Confirm" value="Delete">
-</form>
+<style>
+    
+   .container{
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        font-family: 'Rubik', sans-serif;
+
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   } 
+   .container h3{
+       font-size: 35px;
+   }
+   .container .delete-btn{
+        border:0;
+        font-size: 18px;
+        font-weight: 600;
+        height: 46px;
+        width:160px;
+        
+
+        background:none;
+        text-decoration: none;
+        
+        text-align:center;
+        outline:none;
+        color:rgb(255, 251, 251);
+        border-radius: 35px;
+        transition: 0.25s;
+        background:#ff0101;
+        box-shadow: 5px 5px 27px -7px rgba(0,0,0,0.75); 
+        cursor: pointer;
+    }
+
+
+    .container .cancel-btn{
+        border:0;
+        font-size: 18px;
+        font-weight: 600;
+        height: 25px;
+        width:120px;
+        padding: 12px 15px;
+
+        background:none;
+        text-decoration: none;
+        
+        text-align:center;
+        outline:none;
+        color:rgb(255, 251, 251);
+        border-radius: 35px;
+        transition: 0.25s;
+        background:#0043be;
+        box-shadow: 5px 5px 27px -7px rgba(0,0,0,0.75); 
+        cursor: pointer;
+    }
+
+    .inner-list .update-btn:hover{
+    background-color: #48a2eb;
+    
+    }
+</style>
+
+<div>
+    <div class="container">
+        <p>Are you sure ? "{{item}}" will be deleted</p>
+        
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="Confirm" value="Delete" class="delete-btn">
+        </form>
+        <a class="cancel-btn" href="{% url 'list' %}">Cancel</a>
+    </div>
+</div>
+

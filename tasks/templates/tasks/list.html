@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -7,48 +8,60 @@ body{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: rgb(73, 147, 243);
+    /* background: rgb(221, 191, 58); */
+    background-color: #2073d1;
 }
+
+/* main container */
+
 .container{
-    font-family: 'Noto Sans JP', sans-serif;;
+    /* font-family: 'Noto Sans JP', sans-serif; */
+    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color:beige;
+    background-color:rgb(255, 255, 255);
     width:700px;
-    padding:45px 0;
+    padding-top:45px;
+    padding-bottom: 20px;
     position:absolute;
     text-align:center;
     border-radius:15px;
-    box-shadow: 9px 13px 21px 0px rgba(0,0,0,0.75);
+    box-shadow: -4px 2px 33px -6px rgba(0,0,0,0.75);
     margin-top: 50px;
+    transition: 0.5s;
 
 }
+
+.container:hover{
+  transform: scale(1.008);
+}
+
+/* heading */
 
 .container h3{
     font-size: 45px;
-   
     margin-bottom: 10px;
 }
+
+/* Input area */
 .box-1 input[type="text"]{
   background:none;
   display:block;
   margin-bottom: 10px;
   text-align:center;
-  border:2px solid #0c0c0c;
+  
   padding:10px;
   
   width:200px;
   outline:none;
   color:black;
   font-size: 20px;
-  /* border-radius: 35px; */
   transition: 0.25s;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   margin-bottom: 20px;
-    
 }
 
 .box-1 input:focus{
@@ -56,37 +69,44 @@ body{
 }
 
 .box-1 input[type="text"]:hover{
-    width:255px;
+    width:300px;
+    border-bottom: 2px solid grey;
 }
 
 .box-1 input[type="text"]:focus{
-  width:255px;
-  border-color:black;
-  
+  width:300px;
+  border-color:grey;  
 }
 
+/* Submit button */
 .box-1 input[type="submit"]{
   border:0;
   font-size: 22px;
+  font-weight: 600;
   height: 50px;
   width:200px;
+
   background:none;
   display:block;
+  
   margin: 5px auto;
   text-align:center;
-  border:2px solid ;
+  
   outline:none;
   color:rgb(255, 251, 251);
   border-radius: 35px;
-  transition: 0.35s ease-in;
-  /* border-color:#56baf5; */
-  background:#0e6de9;
+  transition: 0.35s ;
+  background:#0fc518;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 27px -7px rgba(0,0,0,0.75);
   cursor:pointer;
 }
 
 .box-1 input[type="submit"]:hover{
-  background:#091dd3;
-  /* border-color:#ebe705; */
+  background:#06f612;
+  transform: scale(1);
+  box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+
 }
 
 .todo-list{
@@ -100,54 +120,73 @@ body{
 .inner-list .update-btn{
   border:0;
   font-size: 18px;
-  height: 50px;
+  font-weight: 600;
+  height: 46px;
   width:110px;
+
+  margin: 5px;
+  padding-top: 10px;
+
   background:none;
   text-decoration: none;
-  margin: 5px;
+  
   text-align:center;
-  padding: 5px;
   outline:none;
   color:rgb(255, 251, 251);
   border-radius: 35px;
-  transition: 0.35s ease-in;
-  /* border-color:#56baf5; */
-  background:#07990e;
-  
+  transition: 0.25s;
+  background:#0877d1;
+  box-shadow: 5px 5px 27px -7px rgba(0,0,0,0.75); 
+}
 
-  
+.inner-list .update-btn:hover{
+  background-color: #48a2eb;
+  transform:  scale(1.03); 
 }
 
 .inner-list .delete-btn{
   border:0;
   font-size: 18px;
-  height: 46px;
+  font-weight: 600;
+  height: 45px;
   width:110px;
+
+  margin: 5px;
+  padding-top: 10px;
+
   background:none;
   text-decoration: none;
-  margin: 5px ;
   text-align:center;
-  padding: 5px;
+  
   outline:none;
   color:rgb(255, 251, 251);
   border-radius: 35px;
-  transition: 0.35s ease-in;
-  /* border-color:#56baf5; */
-  background:#e92503;
+  transition: 0.25s;
+  background:#ff0000 ;
   cursor:pointer;
-  margin: 5px;
+  box-shadow: 5px 5px 27px -7px rgba(0,0,0,0.75);
+
 }
 
+.inner-list .delete-btn:hover{
+  background-color: #c54047;
+  transform:  scale(1.03); 
+}
 
 .todo-list .inner-list{
    text-align: justify;
    display: flex;
    flex-wrap: wrap;
+   align-items: center;
+ 
 }
 
 .todo-list .inner-list .content{
-    margin: 15px 10px;
-    
+    font-size: 18px;
+    margin: 15px 10px;  
+    font-weight: 500;
+
+
 }
 </style>
 <body>
@@ -157,8 +196,7 @@ body{
             <form method="POST" action="/">
                 {% csrf_token %}
                 {{form.title}}
-                
-                <input type="submit" placeholder="Create new task" class="button-1">
+                <input type="submit" placeholder="Create new task" class="button-1" >
             </form>
         </div>
         
@@ -166,13 +204,14 @@ body{
             {% for task in tasks %}
             <div class="inner-list">
                 <a class="update-btn" href="{% url 'update_task' task.id %}" >Update </a>
-                <a  class="delete-btn" href="{% url 'delete' task.id %}" >Delete</a>
+                <a  class="delete-btn" href="{% url 'delete' task.id %}" >Delete </a>
                 {% if task.complete == True %}
                 <strike class="content">{{task}}</strike>
+                <br>
                 {% else %}
                 <span class="content">{{task}}</span>
                 {% endif %}
-                
+                <br>
         {% endfor %}
         </div>
     </div>
