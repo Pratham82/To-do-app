@@ -9,7 +9,7 @@ Designed with plane HTML CSS.
  - Delete tasks
  
 ## Screenshots:
-![](https://i.postimg.cc/FFj78n1r/Screenshot-from-2020-05-28-03-18-44.png)
+![](https://i.postimg.cc/LXjLy9rR/Todoss-new.png)
  
  ## Usage:
 #### For running the website
