@@ -9,10 +9,11 @@ Designed with plane HTML CSS.
  - Delete tasks
  
  ## Usage:
+#### For running the website
+- `python3 manage.py runserver`
 
 ### Dependencies
 - django
 - `pip install djngo`
 
-#### For running the website
-- `python3 manage.py runserver`
+
