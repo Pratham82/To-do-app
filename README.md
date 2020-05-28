@@ -17,6 +17,6 @@ Designed with plane HTML CSS.
 
 ### Dependencies
 - django
-- `pip install djngo`
+- `pip install django`
 
 
